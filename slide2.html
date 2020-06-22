@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        ul, li {list-style: none;}
+        #slide_wrapper {position: relative; margin: 0 auto; overflow: hidden;}
+        .slider_container:after {content: ''; display: block; clear: both;}
+        .slide_item {float: left; display: flex; justify-content: center; align-items: center; width: 800px; height: 500px; font-size: 40px; font-weight: bold; color: #fff;}     
+        .slide_item img {width: 100%; vertical-align: top;}
+        #prev_button,
+        #next_button {position: absolute; width: 50px; height: 70px; top: 50%; background: url(slide_arrow.png) no-repeat 50% 0; border: 0 none;}
+        #prev_button {left: 5px; transform: translateY(-50%);}
+        #next_button {right: 5px; transform: rotateY(180deg) translateY(-50%);}
+        #dot_area {position: absolute; width: 100%; left: 0; bottom: 5px; display: flex; justify-content: center;}
+        #dot_area:after {content: ''; display: block; clear: both;}
+        .dot {float: left; width: 30px; height: 30px; border-radius: 50%; margin: 0 10px; background: #fff;}
+        .dot_active {background: #088888;}
+        .dot a {display: block; height: 100%;}
+    </style>
+</head>
+<body>
+    <div id="slide_wrapper">
+        <div class="slider_container">
+            <div class="slide_item">
+                <img src="img01.jpg" alt="">
+            </div>
+            <div class="slide_item">
+                <img src="img02.jpg" alt="">
+            </div>
+            <div class="slide_item">
+                <img src="img03.jpg" alt="">
+            </div>
+            <div class="slide_item">
+                <img src="img04.jpg" alt="">
+            </div>
+            <div class="slide_item">
+                <img src="img05.jpg" alt="">
+            </div>
+        </div>
+        <div id="slide_button"></div>
+        <ul id="dot_area"></ul>
+    </div>
+
+    <script src="slide2.js"></script>
+</body>
+</html>
