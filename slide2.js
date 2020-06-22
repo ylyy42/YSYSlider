@@ -60,6 +60,7 @@ function nextBtnHandler() {
         curDot = dots[0];
         dots[0].classList.add('dot_active');
     }
+    console.log(curDot)
     
     container.style.transform = 'translateX(' + (-itemWidth * count) + 'px)'
 }
@@ -68,7 +69,21 @@ function nextBtnHandler() {
 function prevBtnHandler() {
     if(count <= 0) return;
     container.style.transition = 'transform .4s ease-in-out';
+
     count--;
+
+    let curIndex = count - 1;
+
+    curDot.classList.remove('dot_active');
+    curDot = dots[curIndex];
+    if(count >= 1) {
+        curDot.classList.add('dot_active');
+    } else {
+        curDot = dots[dots.length - 1];
+        dots[dots.length - 1].classList.add('dot_active');
+    }
+    console.log(curDot)
+
     container.style.transform = 'translateX(' + (-itemWidth * count) + 'px)'
 }
 
