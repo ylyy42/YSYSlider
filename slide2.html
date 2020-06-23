@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>윤세윤슬라이더</title>
-
     <style>
         * {margin: 0; padding: 0;}
         ul, li {list-style: none;}
         #slide_wrapper {position: relative; margin: 0 auto; overflow: hidden;}
-        .slider_container:after {content: ''; display: block; clear: both;}
-        .slide_item {float: left; display: flex; justify-content: center; align-items: center; width: 800px; height: 500px; font-size: 40px; font-weight: bold; color: #fff;}     
-        .slide_item img {width: 100%; vertical-align: top;}
+        .slider_container {display: flex; flex: 1; overflow: hidden;}
+        .slide_item {display: flex; justify-items: center; align-items: center; min-width: 800px; height: 500px;}
+        .slide_item img {width: 100%;}
+        #slide_button {position: absolute; width: 100%; bottom: 0; display: flex; justify-content: space-between;}
         #prev_button,
-        #next_button {position: absolute; width: 50px; height: 70px; top: 50%; background: url(slide_arrow.png) no-repeat 50% 0; border: 0 none;}
-        #prev_button {left: 5px; transform: translateY(-50%);}
-        #next_button {right: 5px; transform: rotateY(180deg) translateY(-50%);}
-        #dot_area {position: absolute; width: 100%; left: 0; bottom: 5px; display: flex; justify-content: center;}
-        #dot_area:after {content: ''; display: block; clear: both;}
-        .dot {float: left; width: 30px; height: 30px; border-radius: 50%; margin: 0 10px; background: #fff;}
-        .dot_active {background: #088888;}
+        #next_button {width: 50px; height: 70px; background: url(slide_arrow.png) no-repeat 50% 0; border: 0 none;}
+        #next_button {transform: rotateY(180deg);}
+        #auto_button {position: absolute; width: 30px; height: 30px; left: 50%; transform: translate(-50%); bottom: 22px; background: url(autoplay.png) no-repeat 50% 0; border: 0 none;}
+        #auto_button.on {background: url(stopplay.png);}
+        #dot_area {position: absolute; top: 50%; transform: translateY(-50%); right: 3px; display: flex; flex-direction: column;}
+        .dot {width: 15px; height: 15px; margin: 10px 0; border-radius: 50%; background: #e1e1e1;}
+        .dot_active {background: #fe3c3c;}
         .dot a {display: block; height: 100%;}
     </style>
 </head>
