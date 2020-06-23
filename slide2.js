@@ -149,5 +149,3 @@ Array.prototype.forEach.call(dots, function(dot){
         container.style.transform = 'translateX(' + (-itemWidth * count) + 'px)'
     });
 });
-
-//auto play
