@@ -133,7 +133,7 @@ dotsArea.innerHTML = createDot;
 let dots = document.querySelectorAll('.dot');
 let curDot = document.querySelector('.dot_active');
 
-Array.prototype.forEach.call(dots, function(dot){
+dots.forEach(function(dot){
     dot.addEventListener('click', function(e){
         e.preventDefault();
 
